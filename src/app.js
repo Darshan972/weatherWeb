@@ -4,6 +4,7 @@ const express = require("express"); //importing th express module
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 const app = express();
+const port = process.env.PORT || 3000 //port 3000 if we run the app locally
 const hbs = require("hbs");
 
 
@@ -116,6 +117,6 @@ res.status('404').send({
 })
 })
 
-app.listen(3000, () => {
-  console.log("Server is up on port 3000.");
+app.listen(port, () => {
+  console.log("Server is up on port " +port);
 });
